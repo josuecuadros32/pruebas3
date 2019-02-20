@@ -1,0 +1,76 @@
+<br><br>
+
+<div class="container" [ngStyle]="{'background-image': getUrl() }">
+  <div class="mt-5">
+    <br>
+     <h1 class="container bg-dark text-white text-center my-4 py-4 text-monospace">{{!this.equiposervice.selectedEmpleado.id
+       ? 'Nuevo Empleado': 'Modificar Empleado'}}</h1>
+
+  <!---Formulario--->
+  <form #formEmpleado="ngForm" (ngSubmit)="onsaveEmpleado(formEmpleado)">
+
+    <!--Id--->
+    <input type="hidden" name="id" [(ngModel)]="this.equiposervice.selectedEmpleado.id" #nombre="ngModel">
+
+    <!---Nombre---->
+    <div class="form-group">
+      <label for="nombre" class="col-form-label text-white text-monospace">Nombre:</label>
+      <input type="text" name="nombre" class="form-control" [(ngModel)]="this.equiposervice.selectedEmpleado.nombre"
+       required>
+    </div>
+
+      <!----Apellido---->
+      <div class="form-group">
+        <label for="apellido" class="col-form-label text-white text-monospace ">Apellido:</label>
+        <input type="text" class="form-control" name="apellido" [(ngModel)]="this.equiposervice.selectedEmpleado.apellido"
+         required>
+      </div>
+
+      <!----Edad---->
+      <div class="form-group">
+        <label for="edad" class="col-form-label text-white text-monospace ">Edad:</label>
+        <input type="text" class="form-control" name="edad" [(ngModel)]="this.equiposervice.selectedEmpleado.edad"
+         required maxlength="2">
+      </div>
+
+      <!-----Especialidad------>
+      <div class="form-group">
+        <label for="especialidad" class="col-form-label text-white text-monospace ">Especialidad:</label>
+        <input type="text" class="form-control" name="especialidad" [(ngModel)]="this.equiposervice.selectedEmpleado.especialidad"
+         required>
+      </div>
+
+      <!------Telefono------->
+      <div class="form-group">
+        <label for="telefono" class="col-form-label text-white text-monospace ">Telefono:</label>
+        <input type="text" class="form-control" name="telefono" [(ngModel)]="this.equiposervice.selectedEmpleado.telefono"
+         required pattern="^[3]\d{9}$">
+      </div>
+
+      <!-------Email------->
+      <div class="form-group">
+        <label for="telefono" class="col-form-label text-white text-monospace ">Email</label>
+        <input type="text" class="form-control" name="email" [(ngModel)]="this.equiposervice.selectedEmpleado.email"
+         required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+      </div>
+
+      <!----Descripcion---->
+      <div class="form-group">
+        <label for="descripcion" class="col-form-label text-white text-monospace ">Descripcion:</label>
+        <textarea type="text" class="form-control" name="descripcion" [(ngModel)]="this.equiposervice.selectedEmpleado.descripcion"
+         required minlength="10"></textarea>
+      </div>
+
+      <!----Botones---->
+   <button type="submit" class=" btn btn-lg btn btn-primary text-monospace text-white" [disabled]="formEmpleado.invalid"><i class="fas fa-envelope"></i>&nbsp;Guardar</button>&nbsp;&nbsp;
+      
+   <button type="reset" class="btn btn-lg btn btn-secondary text-monospace text-white"><i class="fas fa-sync"></i> Reset</button>&nbsp;
+      
+   <a title="regresar" routerLink="/nosotros"><button type="button" class="btn btn-lg btn btn-secondary text-monospace text-white"
+    #btnRegresar><i class="fas fa-reply"></i> </button></a>
+
+  </form>
+    <br>
+  </div>
+  <br><br><br><br>
+</div>

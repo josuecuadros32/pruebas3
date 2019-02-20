@@ -1,0 +1,49 @@
+<br><br>
+
+<div class="container">
+  <section class="rom mt-5">
+    <div class="col">
+      <br>
+      <a routerLink="/empleado"><button class="btn btn-primary  mb-3">Nuevo Empleado</button></a>
+
+<table class="table table-hover">
+
+    <thead class="bg-dark">
+      <tr>
+        <td class="text-white text-monospace" scope="col">#</td>
+        <td class="text-white text-monospace" scope="col">Nombre</td>
+        <td class="text-white text-monospace" scope="col">Apellido</td>
+        <td class="text-white text-monospace" scope="col">Especialidad</td>
+        <td class="text-white text-monospace" scope="col">Informacion</td>
+      </tr>
+    </thead>
+
+        
+     <tbody>
+      <tr *ngFor="let empleado of empleados, index as i">
+         <td class="text-white text-monospace" scope="row"><h6>{{i+1}}</h6></td>
+         <td class="text-white text-monospace" scope="row"><h6>{{empleado.nombre}}</h6></td>
+         <td class="text-white text-monospace" scope="row"><h6>{{empleado.apellido}}</h6></td>
+         <td scope="row"><h6>{{empleado.especialidad}}</h6></td>
+         <td><a title="Saber mas..." class=" text-monospace" routerLink="/equipo/{{empleado.id}}"><h5>Detalles</h5></a></td>
+      </tr>
+
+          
+      <tr>
+        <td scope="col"></td>
+        <td scope="col"></td>
+        <td scope="col"></td>
+        <td scope="col"></td>
+        <td scope="col"></td>
+       </tr>
+        
+      </tbody>
+
+</table>
+
+
+    </div>
+</section>
+  <br><br>
+</div>
+

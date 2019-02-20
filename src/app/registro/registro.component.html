@@ -1,0 +1,87 @@
+<br><br><br><br>
+<div class="container" [ngStyle]="{'background-image': getUrl() }">
+
+  <br><br>
+  <h1 class="container bg-dark text-white text-center my-4 py-4 text-monospace">Registro</h1>
+
+
+
+  <form #form="ngForm" (submit)="onUser()" (submit)="onSubmit(form)">
+
+    <!----Campo de nombre----->
+    <div class="form-group">
+      <label class="text-white text-monospace">Nombre:</label>
+      <input name="nombre" #nombre="ngModel" [(ngModel)]="authservice.registroForm.nombre" placeholder="Ingrese su nombre"
+        class="form-control" required maxlength="40">
+      <div *ngIf="nombre.invalid && nombre.touched">
+        <div class="validation_error text-danger" *ngIf="nombre?.errors.required">Este campo es requerido</div>
+      </div>
+    </div>
+
+    <!----Campo de apellido----->
+    <div class="form-group">
+      <label class="text-white text-monospace">Apellido:</label>
+      <input name="apellido" #apellido="ngModel" [(ngModel)]="authservice.registroForm.apellido" placeholder="Ingrese su apellido"
+        class="form-control" required maxlength="40">
+      <div *ngIf="apellido.invalid && apellido.touched">
+        <div class="validation_error text-danger" *ngIf="apellido?.errors.required">Este campo es requerido</div>
+      </div>
+    </div>
+
+    <!-----Campo de edad----->
+    <div class="form-group">
+      <label class="text-white text-monospace">Edad:</label>
+      <input name="edad" #edad="ngModel" [(ngModel)]="authservice.registroForm.edad" placeholder="Ingrese su edad"
+        class="form-control" required minlength="1" maxlength="2">
+      <div *ngIf="edad.invalid && edad.touched">
+        <div class="validation_error text-danger" *ngIf="edad?.errors.required">Este campo es requerido</div>
+      </div>
+    </div>
+
+    <!---Campo de email----->
+    <div class="form-group">
+      <label class="text-white text-monospace">Email:</label>
+      <input type="text" name="email" [(ngModel)]="email" placeholder="Ingrese su email" class="form-control" required
+        pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+    </div>
+
+
+    <!---Campo de contraseña--->
+    <div class="form-group">
+      <label class="text-white text-monospace">Contraseña:</label>
+      <input type="password" name="password" [(ngModel)]="password" placeholder="Ingrese su contraseña" class="form-control"
+        required minlength="8" maxlength="20" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}">
+    </div>
+
+    <!-----Campo de selecion de imagen----->
+    <div class="form-group">
+      <h5 class="text-white text-monospace">Selecionar imagen</h5>
+      <input type="file" name="image" [(ngModel)]="image" class="form-control" required accept=".png, .jpg" (change)="onUpload($event)">
+    </div>
+
+    <input #imageUser type="hidden" [value]="urlImage | async">
+    <br>
+
+
+    <!---Registrar-->
+    <div class="text-center">
+      <button type="submit" class=" btn btn-lg btn btn-primary text-monospace text-white" [disabled]="form.invalid">Registrar</button>&nbsp;
+
+      <!----Resetear formulario-->
+      <a><button type="reset" class="btn btn-lg btn btn-secondary text-monospace text-white"><i class="fas fa-undo"></i>Reset
+        </button></a>
+
+      <!-----Ingresar con google-->
+      <a class=" text-center text-monospace btn btn-lg text-light btn-social btn-google" (click)="onLoginGoogle()"><i
+          class="fab  fa-google"></i>oogle</a>
+
+      <!----Ingresar con facebook-->
+      <a class=" text-center text-monospace btn btn-lg text-light btn-facebook" (click)="onLoginFacebook()"><i class="fab fa-facebook-f"></i>acebook</a>
+
+    </div>
+
+  </form>
+
+
+  <br>
+</div>

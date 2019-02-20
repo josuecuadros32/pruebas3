@@ -1,0 +1,38 @@
+
+
+<br><br>
+<div class="container" [ngStyle]="{'background-image': getUrl(), 'heigth' : '700px' }">
+  <div class="mt-5">
+
+    <br><br>
+
+
+    <div class="container">
+      <h1 class="container bg-dark text-white text-center my-4 py-4 text-monospace">Usuario</h1>
+      <div class="">
+        <div class="card" style="width: 66rem; ">
+          <div class="card-body ">
+            <div class="col-12 text-center">
+              <img src="{{registro.image}}" class="rounded-circle img-thumbnail text-monospace" alt="Profile">
+
+            </div>
+            <br>
+            <h5 *ngIf="providerId != 'password'" class="card-text text-center text-monospace">{{registro.nombre}}</h5>
+            <p class="card-text text-center text-monospace">{{registro.email}}</p>
+            <h5 class="text-monospace text-center">Descripcion</h5><br>
+            <p class="card-text text-monospace text-justify">Some quick example text to build on the card title and
+              make up the bulk of the card's
+              content.ome quick example text to build on the card title and make up the bulk of the card's
+              ome quick example text to build on the card title and make up the bulk of the card's </p>
+
+          </div>
+
+        </div>
+        <br><br>
+
+      </div>
+
+    </div>
+    <br><br><br>
+  </div>
+</div>

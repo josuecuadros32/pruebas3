@@ -1,0 +1,47 @@
+<br><br><br><br>
+<div class="container" [ngStyle]=" {'background-image': getUrl() }">
+ <div class="container">
+   <br>
+     <h1 class="container bg-dark text-white text-center my-4 py-4 text-monospace">Contactenos</h1>
+       <br><br>
+         <div class="container">
+ 
+<!----Formulario----->          
+<form #form="ngForm" (submit)="onSubmit(form)">
+
+            <!----Email--->
+            <div class="form-group">
+             <label class="text-white text-monospace">Email:</label>
+             <input type="text" name="email" [(ngModel)]="email" placeholder="Ingrese su email" class="form-control"
+             required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+            </div>
+
+            <!----Comentarios---->
+            <div class="form-group">
+             <label class="text-white text-monospace">Comentarios</label>
+             <textarea class="form-control" required type="text" name="comentario" [(ngModel)]="comentario"></textarea>
+            </div>
+      
+    <br>
+
+    <!----Botones---->
+
+      <button type="submit" class="btn btn-primary btn-lg" [disabled]="form.invalid">Enviar</button>
+       &nbsp;<button type="reset" class="btn btn-lg btn-secondary"><i class="fas fa-redo"></i> Reset</button>
+</form>
+
+           <!---Comentarios--->
+
+        <div class="mt-5">
+ 
+        <br>
+      <li class="list-group-item" *ngFor="let comentario of comentarios,">
+       <h6 class="text-monospace">Nombres: {{comentario.email}} </h6>
+       <h6 class="text-monospace">Comentario: {{comentario.comentario}}</h6>
+      </li>
+
+  <br><br>
+   </div>
+  </div>
+ </div>
+</div>

@@ -1,0 +1,52 @@
+<br><br><br><br>
+<div class="container" [ngStyle]=" {'background-image': getUrl() }">
+<br><br><br><br>
+<div class="container">
+
+  <div class="container">
+    <br>
+    <h1 class="container bg-dark text-white text-center my-4 py-4 text-monospace">Iniciar sesion</h1>
+
+
+    <div class="container">
+
+      <form #formLogin="ngForm" (submit)="onLogin()">
+
+        <!----Campo de Email---->
+        <div class="form-group">
+          <label class="text-white text-monospace">Email:</label>
+          <input name="email" [(ngModel)]="email" type="email" class="form-control" placeholder="email@example.com">
+        </div>
+
+
+        <!-----Campo de contraseña----->
+        <div class="form-group">
+          <label class="text-white text-monospace">Password</label>
+          <input name="password" [(ngModel)]="password" type="password" class="form-control" placeholder="Ingrese su contraseña">
+        </div><br>
+
+
+        <!----Ingresar-->
+        <div class="text-center">
+          <button type="submit" class="btn btn-lg btn btn-primary text-monospace text-white">Ingresar</button>&nbsp;
+
+          <!----Resetear formulario--->
+          <button type="reset" class="btn btn-lg btn-secondary text-monospace text-white"><i class="fas fa-redo"></i> Reset</button>
+
+          <!----Ingresar con google--->
+          <a class=" text-center text-monospace btn btn-lg text-light btn-social btn-google" (click)="onLoginGoogle()"><i
+              class="fab  fa-google"></i>oogle</a>
+
+          <!-----Ingresar con facebook-->
+          <a class=" text-center text-monospace btn btn-lg text-light btn-facebook " (click)="onLoginFacebook()"><i
+              class="fab fa-facebook-f"></i>acebook</a>
+
+        </div>
+      </form>
+
+
+
+    </div>
+  </div>
+  <br>
+</div>

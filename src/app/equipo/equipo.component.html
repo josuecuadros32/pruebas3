@@ -1,0 +1,33 @@
+
+<br><br><br><br>
+<div class="container" [ngStyle]=" {'background-image': getUrl() }">
+  <br>
+
+   <div class="mt-5">
+
+
+       <div class="card" style="width: 66rem; ">
+         <div class="card-body ">
+           <h1 class="container bg-dark text-white text-center my-4 py-4">Empleado</h1>
+           <h6 class="text-black text-center text-monospace">Nombre: {{empleado.nombre}} {{empleado.apellido}} </h6>
+           <h6 class="text-center text-black text-monospace">Email: {{empleado.email}}</h6>
+           <h6 class="text-center text-black text-monospace">Telefono: {{empleado.telefono}}</h6>
+           <h6 class="text-center text-black text-monospace">Especialidad: {{empleado.especialidad}}</h6>
+           <h6 class="text-center text-black text-monospace">Edad: {{empleado.edad}}</h6><br>
+           <h6 class=" text-black text-monospace text-center">Descricpion <br><br>
+           <p class="text-justify">{{empleado.descripcion}}</p>
+           </h6>
+       </div>
+       
+    <div class="text-center"> 
+     <a routerLink="/empleado"><button type="submit" class="btn-social btn btn-lg btn btn-primary" (click)="onPreUpdate(empleado)"><i class="far fa-edit"></i> Modificar</button></a>&nbsp;&nbsp;
+   
+     <button type="button" class="btn-social btn btn-lg btn btn-danger" (click)="onDeleteEmpleado(empleado.id)"><i class="far fa-trash-alt"></i> Eliminar</button>&nbsp;&nbsp;
+   
+     <a routerLink="/nosotros"><button type="reset" class=" btn btn-lg btn btn-secondary"><i class="fas fa-reply"></i> Volver</button></a><br>
+      <br>
+    </div>
+    </div>
+  </div>
+  <br>
+</div>

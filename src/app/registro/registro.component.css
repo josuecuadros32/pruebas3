@@ -1,0 +1,80 @@
+.btn-social {
+  position: relative;
+
+  text-align: left;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  background: blanchedalmond;
+
+  border-color: rgba(0, 0, 0, 0.2);
+}
+
+.btn-facebook {
+  background-color: #3b5998;
+  cursor: pointer;
+  color: #000;
+  font-weight: bold;
+  margin-bottom: 20px;
+  padding: 15px;
+  width: 50rem;
+
+
+
+}
+
+
+.btn-google {
+  background-color: #ff593f;
+  cursor: pointer;
+  color: #000;
+  font-weight: bold;
+  margin-bottom: 20px;
+  padding: 15px;
+  width: 50rem;
+
+}
+
+
+button[type='submit'] {
+  background-color: #338AFF;
+  cursor: pointer;
+  color: #000;
+  font-weight: bold;
+  margin-bottom: 20px;
+  padding: 15px;
+  width: 50rem;
+
+}
+
+button[type='reset'] {
+  background-color: #66666F;
+  cursor: pointer;
+  color: #000;
+  font-weight: bold;
+  margin-bottom: 20px;
+  padding: 15px;
+  width: 50rem;
+}
+
+figcaption {
+  display: none;
+  transition: all .5s;
+}
+
+/* Visible texto */
+figure:hover figcaption {
+  display: block;
+  transition: all .5s;
+}
+
+.ng-valid[required],
+.ng-valid.required {
+  border-left: 6px solid #42A948;
+  /* green */
+}
+
+.ng-invalid:not(form) {
+  border-left: 6px solid #a94442;
+  /* red */
+}
